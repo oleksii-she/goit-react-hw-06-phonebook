@@ -1,14 +1,31 @@
 import { ContactsItem } from './contactsItem';
+import { useSelector, useDispatch } from 'react-redux';
 import { List } from './contacts.styled';
-export const ContactsList = ({ dataList, onDeleteContact }) => {
+import { deleteTask } from 'redux/phoneBookSlice';
+export const ContactsList = () => {
+  const dataList = useSelector(state => state.contacts);
+  const filter = useSelector(state => state.filter.filter);
+
+  const dispatch = useDispatch();
+
+  const FindContact = () => {
+    const normalizedfilter = filter.toLowerCase();
+
+    return dataList.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedfilter)
+    );
+  };
+
+  const contactsData = FindContact();
+
   return (
     <List>
-      {dataList.map(data => (
+      {contactsData.map(data => (
         <ContactsItem
           key={data.id}
           name={data.name}
           number={data.number}
-          onClick={() => onDeleteContact(data.id)}
+          onClick={() => dispatch(deleteTask(data.id))}
         />
       ))}
     </List>
