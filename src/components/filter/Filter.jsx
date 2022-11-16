@@ -1,8 +1,8 @@
 import { Label } from './filter.styled';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
 
-export const Filter = ({ onChange }) => {
+export const Filter = () => {
   const dispath = useDispatch();
 
   return (

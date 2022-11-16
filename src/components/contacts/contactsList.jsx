@@ -2,6 +2,7 @@ import { ContactsItem } from './contactsItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { List } from './contacts.styled';
 import { deleteTask } from 'redux/phoneBookSlice';
+
 export const ContactsList = () => {
   const dataList = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter.filter);

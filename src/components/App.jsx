@@ -1,10 +1,9 @@
-import { React, useState, useEffect } from 'react';
-import { nanoid } from 'nanoid';
+import { React } from 'react';
+
 import { FormData } from './form/form';
 import { Filter } from './filter/Filter';
 import { ContactsList } from './contacts/contactsList';
 import { Conteiner } from './conteiner.styled';
-import { contactsData } from './contactsData';
 
 export const App = () => {
   return (
