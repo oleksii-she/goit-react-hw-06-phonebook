@@ -13,9 +13,6 @@ const contactsBookSlice = createSlice({
   initialState,
   reducers: {
     addContact(state, action) {
-      if (state.find(contact => contact.name === action.payload.name)) {
-        return alert(`${action.payload.name} is already exist!`);
-      }
       state.push(action.payload);
     },
     deleteTask(state, action) {

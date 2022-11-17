@@ -5,8 +5,8 @@ import { deleteTask } from 'redux/phoneBookSlice';
 
 export const ContactsList = () => {
   const dataList = useSelector(state => state.contacts);
-  const filter = useSelector(state => state.filter.filter);
-
+  const filter = useSelector(state => state.filter);
+  console.log(filter);
   const dispatch = useDispatch();
 
   const FindContact = () => {
